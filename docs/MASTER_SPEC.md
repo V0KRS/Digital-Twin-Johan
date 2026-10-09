@@ -1,3 +1,5 @@
+“Reference only; CLAUDE.md governs.” Sessions will read it only when a task needs it.
+
 Checkpoint 0 approved. Checkpoint 1a complete. For “continue”, read CONTINUATION.md, follow Section 22, and commit and push to main at the end of every increment.
 
 
@@ -63,7 +65,7 @@ The product must be configurable and extensible.
 
 ---
 
-## 3. YOUR FIRST RESPONSIBILITY: CHOOSE THE RIGHT TECHNOLOGY
+## 3. (May skip since stack is already decided) YOUR FIRST RESPONSIBILITY: CHOOSE THE RIGHT TECHNOLOGY
 
 Before implementing the application, evaluate the most suitable technology and architecture.
 
@@ -903,29 +905,6 @@ Develop the product through sequential checkpoints.
 
 Every checkpoint must leave the repository in a coherent state and deliver a useful increment.
 
-### Checkpoint 0: Requirements and architecture
-
-Deliver:
-
-* Product scope.
-* MVP definition.
-* Technology comparison.
-* Recommended stack.
-* Architecture diagram.
-* Repository structure.
-* Core data model.
-* Connector architecture.
-* Security and deployment design.
-* Development roadmap.
-* Acceptance criteria.
-* Major risks and assumptions.
-
-At this checkpoint, make reasonable assumptions rather than asking dozens of questions.
-
-Ask only essential questions whose answers could materially change the architecture.
-
-Stop after producing the architecture proposal and wait for my approval.
-
 ### Checkpoint 1: Application skeleton
 
 Implement the application structure, startup, basic UI, project creation, initial 3D viewport, configuration persistence, logging and basic tests.
@@ -1139,25 +1118,7 @@ Update `CONTINUATION.md` before ending whenever the repository is accessible.
 
 If the working environment cannot preserve changes between sessions, explain that limitation and provide a recovery plan rather than pretending that the project state is safely persisted.
 
-### Rule H: What to do when I say "continue" after Checkpoint 0
-
-Checkpoint 0 is the only stage that must stop for my approval.
-
-After I review the architecture proposal and say "continue", treat that as approval to proceed with the proposed architecture unless I explicitly identify a concern.
-
-Then begin implementation.
-
-For every subsequent "continue", autonomously proceed to the next appropriately sized implementation increment.
-
-Do not repeatedly ask me whether you should start coding.
-
-Do not ask me to select a checkpoint number.
-
-Do not ask me to repeat the original requirements.
-
-Ask a question only when a genuinely blocking decision cannot reasonably be resolved using a documented default.
-
-### Rule I: Do not confuse partial completion with failure
+### Rule H: Do not confuse partial completion with failure
 
 It is acceptable for the complete product to require many continuation turns.
 
@@ -1245,42 +1206,6 @@ Use realistic sample projects and automated test data.
 When complete integration is not yet possible, implement the smallest working increment and clearly document the missing pieces.
 
 ---
-
-## 25. REQUIRED FIRST RESPONSE
-
-Begin with Checkpoint 0 only.
-
-Do not generate the entire codebase immediately.
-
-Provide a professional architecture and product proposal containing:
-
-1. Your understanding of the business problem.
-2. The recommended product scope.
-3. The initial MVP.
-4. A comparison of Unity, browser-based 3D and hybrid architecture.
-5. Your chosen technology stack and justifications.
-6. A system architecture diagram.
-7. The repository and directory structure.
-8. The main data models and their relationships.
-9. The industrial connector architecture.
-10. The security and deployment design.
-11. The reusable equipment and project-template strategy.
-12. The development roadmap and acceptance criteria.
-13. The main technical risks and mitigations.
-14. Important assumptions and unresolved decisions.
-15. The first concrete implementation plan.
-
-Be specific enough that implementation can begin without another lengthy planning exercise.
-
-Do not give me a generic essay about digital twins.
-
-Make decisions, explain trade-offs and establish a realistic development path.
-
-Ask only essential questions whose answers could materially change the architecture. Where possible, state a reasonable default and proceed on that basis after approval.
-
-End the first response with a short list of any essential questions and the proposed architecture awaiting my approval.
-
-After I say "continue", begin building the actual application according to the mandatory continuation rules.
 
 ## FINAL OBJECTIVE
 
