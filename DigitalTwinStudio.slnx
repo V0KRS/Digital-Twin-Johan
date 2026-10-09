@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/server/Dts.Domain/Dts.Domain.csproj" />
+    <Project Path="src/server/Dts.Host/Dts.Host.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/server/Dts.Tests/Dts.Tests.csproj" />
+  </Folder>
+</Solution>

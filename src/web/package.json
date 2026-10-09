@@ -1,0 +1,11 @@
+{
+  "name": "dts-web",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "build": "npm run build -w apps/editor",
+    "test": "npm run test -w apps/editor",
+    "typecheck": "npm run typecheck -w apps/editor"
+  }
+}

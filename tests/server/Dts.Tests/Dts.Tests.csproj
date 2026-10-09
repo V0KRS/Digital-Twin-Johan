@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\server\Dts.Host\Dts.Host.csproj" />
+  </ItemGroup>
+</Project>
