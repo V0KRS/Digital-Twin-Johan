@@ -11,6 +11,7 @@ Key rules
 - Quality model: Good | Uncertain | Bad | Stale | Unavailable | Unknown | Simulated.
 - Deployment: single workstation first (Windows-native and Docker both eventually), intranet server later.
 
-Implemented so far (1a): `Dts.Domain` (product identity), `Dts.Host` (health/version, JSON logging,
-loopback bind), web editor shell. Everything else is planned, not built.
+Implemented so far: (1a) `Dts.Domain` (product identity), `Dts.Host` (health/version, JSON logging, loopback bind),
+web editor shell. (1b) project model + `IProjectStore` + crash-safe `FileProjectStore` (decision 0003) and
+`/api/projects` CRUD/revision endpoints. PostgreSQL store, scene content, 3D, auth: planned, not built.
 Full proposal: Checkpoint 0 response (conversation); decisions in `docs/DECISIONS/`.

@@ -1,4 +1,6 @@
 using Dts.Domain;
+using Dts.Domain.Projects;
+using Dts.Host.Persistence;
 
 namespace Dts.Host;
 
@@ -19,13 +21,22 @@ public static class StudioHost
 
         builder.Services.AddHealthChecks();
 
+        // Project persistence: file-based store under Dts:DataDir (default: per-user local app data).
+        var dataDir = builder.Configuration["Dts:DataDir"];
+        if (string.IsNullOrWhiteSpace(dataDir))
+            dataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DigitalTwinStudio");
+        builder.Services.AddSingleton<IProjectStore>(sp =>
+            new FileProjectStore(dataDir, TimeProvider.System, sp.GetRequiredService<ILoggerFactory>().CreateLogger("Dts.ProjectStore")));
+
         var app = builder.Build();
+        app.UseMiddleware<ProjectExceptionMiddleware>();
         MapEndpoints(app);
         return app;
     }
 
     internal static void MapEndpoints(WebApplication app)
     {
+        ProjectEndpoints.Map(app);
         app.MapGet("/api/health", () => Results.Ok(new { status = "ok" }));
         app.MapGet("/api/version", () => Results.Ok(new
         {

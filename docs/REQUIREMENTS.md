@@ -16,3 +16,12 @@ export package -> create second project from it.
 | 9 RC | Release-readiness report |
 
 Checkpoint 1 increments: 1a skeleton (done) · 1b persistence + project CRUD · 1c editor shell + Babylon viewport · 1d restart acceptance.
+
+## Status
+| Item | Status |
+|---|---|
+| 1a skeleton | done, verified |
+| 1b project create/rename/duplicate/archive, atomic save with revisions, schemaVersion | done server-side (file store); verified by tests 2026-10-09 |
+| 1b crash-safety (interrupted save keeps previous revision) | done; fault-injection tests plus manual `kill -9` restart |
+| 1b PostgreSQL store | not started (needs NuGet + Postgres) |
+| Checkpoint 1 acceptance (add object, save, restart, load in the UI) | NOT met: no editor UI/viewport yet (1c, 1d) |

@@ -1,7 +1,7 @@
 # Industrial Digital Twin Studio
 
 Internal platform for building reusable industrial digital twins (water/PUB projects and beyond).
-Status: **Checkpoint 1a (skeleton)**. See `CONTINUATION.md` for exact state.
+Status: **Checkpoint 1, increment 1b (project persistence + API) done**. See `CONTINUATION.md` for exact state.
 
 ## Prerequisites
 - .NET SDK 10 (LTS) — pinned via `global.json`
@@ -13,7 +13,9 @@ Status: **Checkpoint 1a (skeleton)**. See `CONTINUATION.md` for exact state.
 dotnet run --project src/server/Dts.Host          # http://127.0.0.1:5080 (loopback only by default)
 cd src/web && npm ci && npm run dev -w apps/editor  # Vite dev server, proxies /api to the host
 ```
-Endpoints now: `GET /api/health`, `GET /api/version`.
+Endpoints now: `GET /api/health`, `GET /api/version`, and `/api/projects` (list, create, get, save with
+`expectedRevision`, rename, duplicate, archive/unarchive, revisions). Projects are stored as files under
+`Dts:DataDir` (default: per-user local app data); override with `--Dts:DataDir=/path`.
 
 ## Verify everything
 ```bash

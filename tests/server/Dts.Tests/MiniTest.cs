@@ -12,6 +12,15 @@ public static class Assert
     public static void Equal<T>(T expected, T actual)
     { if (!EqualityComparer<T>.Default.Equals(expected, actual)) throw new Exception($"Expected '{expected}', got '{actual}'"); }
     public static void True(bool c, string msg = "Expected true") { if (!c) throw new Exception(msg); }
+    public static void NotEqual<T>(T notExpected, T actual)
+    { if (EqualityComparer<T>.Default.Equals(notExpected, actual)) throw new Exception($"Did not expect '{actual}'"); }
+    public static async Task<T> ThrowsAsync<T>(Func<Task> action) where T : Exception
+    {
+        try { await action(); }
+        catch (T e) { return e; }
+        catch (Exception e) { throw new Exception($"Expected {typeof(T).Name}, got {e.GetType().Name}: {e.Message}"); }
+        throw new Exception($"Expected {typeof(T).Name}, but nothing was thrown");
+    }
 }
 
 public static class Runner
