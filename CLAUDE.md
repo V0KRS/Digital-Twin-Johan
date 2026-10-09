@@ -1,5 +1,27 @@
 Checkpoint 0 approved. Checkpoint 1a complete. For “continue”, read CONTINUATION.md, follow Section 22, and commit and push to main at the end of every increment.
 
+## Session and Git rules (apply to every "continue")
+
+Meaning of "continue": read CONTINUATION.md, then run `git status`, `git log -5` and `git diff`
+to find the real state. Finish or repair any unfinished work before starting anything new.
+
+1. **Branch per increment.** Work on `inc/<id>-<name>` (e.g. `inc/1b-project-store`).
+   Merge to `main` only after `./scripts/verify.sh` passes. `main` must never be left broken.
+2. **Small commits.** Commit each green step (interface, then store, then tests).
+   Push the branch after every commit so work survives an interruption.
+3. **In-progress note.** Before any large edit, add an "In progress" section to CONTINUATION.md
+   (what is changing, which files, what is still missing) and commit it. Notes-only
+   commits are exempt from rule 4. Remove the section once the work is done.
+4. **Verify before commit.** Run the fast checks (build + tests for the touched area) before
+   every code commit, and the full `./scripts/verify.sh` before merging to `main`.
+   Never commit code that fails to build.
+5. **Small increments.** Leave enough budget to update CONTINUATION.md, commit and push.
+   If budget is running low, stop at the last green commit and write the notes.
+6. **Honest reporting.** Never say something was pushed or tests passed unless you saw it happen.
+   Never commit secrets, tokens or credentials.
+7. **Finish of each increment:** update CONTINUATION.md, merge to `main`, push, and report
+   the checkpoint summary from Section 22 Rule G.
+
 ## 1. YOUR ROLE AND RESPONSIBILITIES
 
 You are the principal software architect, senior full-stack engineer, 3D graphics engineer, industrial automation specialist, SCADA integration engineer, cybersecurity engineer, UI/UX designer, QA engineer, and technical documentation writer for this project.
